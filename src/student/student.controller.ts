@@ -15,5 +15,11 @@ export class StudentController {
   async findAll(): Promise<Student[]> {
     return this.studentService.findAll();
   }
+
+  @Get(':id')
+  async findOne(@Param('id') id: number): Promise<Student> {
+    return this.studentService.findOne(id);
+  }
+
 }
 
